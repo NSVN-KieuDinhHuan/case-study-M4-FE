@@ -73,8 +73,40 @@ function createPayment(){
     })
 }
 
-function editPayment(){
-
+function editPayment(id){
+    let amount = $('#amountEdit').val();
+    let date = $('#dateEdit').val();
+    let wallet = $('#walletEdit').val();
+    let category = $('#categoryEdit').val();
+    let payment = new FormData();
+    let files = $('#imageEdit').prop('files');
+    if(files.length != 0){
+        let image = files[0];
+        payment.append('image',image);
+    }
+    payment.append('amount',amount);
+    payment.append('wallet',wallet);
+    payment.append('paymentCategory',category);
+    payment.append('date',date);
+    $.ajax({
+        type:'POST',
+        url: `http://localhost:8080/payments/${id}`,
+        headers:{
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        data: payment,
+        enctype: 'multipart/form-data',
+        processData: false,
+        contentType: false,
+        success: function (payment){
+            console.log(payment);
+            showAllPayment();
+            console.log('edit successfully!');
+        },
+        error: function (){
+            console.log('edit failed!');
+        }
+    })
 }
 
 
