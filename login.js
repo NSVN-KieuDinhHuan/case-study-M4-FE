@@ -19,3 +19,12 @@ function login(){
         }
     });
 }
+
+function logout(){
+    localStorage.removeItem('currentUser');
+    location.href = '/case-study-M4-FE/index.html';
+}
+
+$('#logout').on( "click", function() {
+    logout();
+});
