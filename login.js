@@ -15,7 +15,21 @@ function login(){
         },
         success: function (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            location.href = 'member/index.html'
+            let  role=currentUser.roles[0].authority;
+            if(role=="ROLE_ADMIN"){
+                location.href = 'admin/index.html'
+            }else {
+                location.href = 'users/index.html'
+            }
         }
     });
 }
+
+function logout(){
+    localStorage.removeItem('currentUser');
+    location.href = '/login.html';
+}
+
+// $('#logout').on( "click", function() {
+//     logout();
+// });

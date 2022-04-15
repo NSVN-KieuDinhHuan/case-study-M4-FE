@@ -3874,7 +3874,7 @@
        * @private
        * @type {Object}
        * @deprecated since version 1.8
-       * @member Utils
+       * @users Utils
        * @memberof Popper
        */
 

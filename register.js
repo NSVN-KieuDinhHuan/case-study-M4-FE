@@ -1,4 +1,5 @@
 
+
 function register() {
     let username = $('#username').val();
     let email=$('#email').val();
@@ -21,13 +22,16 @@ function register() {
             'Content-Type': 'application/json'
         },
         success: function () {
-            location.href = '/member/deposit.html';
+            location.href = '/case-Study-M4-FE/login.html';
         },
         error: function () {
-            showErrorMessage('Xảy ra lỗi!')
+
         }
     })
+
+
 }
+
 
 $().ready(function() {
     $("#registerForm").validate({

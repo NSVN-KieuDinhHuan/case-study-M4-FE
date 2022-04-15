@@ -11766,7 +11766,7 @@ module.exports = function(Chart) {
 			me.afterDataLimits();
 
 			// Ticks - `this.ticks` is now DEPRECATED!
-			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` member
+			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` users
 			// and must not be accessed directly from outside this class. `this.ticks` being
 			// around for long time and not marked as private, we can't change its structure
 			// without unexpected breaking changes. If you need to access the scale ticks,
