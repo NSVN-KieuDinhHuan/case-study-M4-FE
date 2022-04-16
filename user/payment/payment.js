@@ -60,8 +60,8 @@ function createPayment(){
         success: function (payment){
             console.log(payment);
             showAllPayment();
-            showSuccessMessage('Create successfully!')
-            console.log('Create successfully!')
+            showSuccessMessage('Tạo mới thành công!');
+            console.log('Create successfully!');
             $('#amount').val(null);
             $('#date').val(null);
             $('#image').val(null);
@@ -69,7 +69,7 @@ function createPayment(){
             $('#category').val(null);
         },
         error: function (){
-            showErrorMessage('Created failed!');
+            showErrorMessage('Tạo lỗi!');
             console.log('Created failed');
         }
     })
@@ -105,9 +105,11 @@ function editPayment(id){
             showAllPayment();
             $('#imageEdit').val(null);
             console.log('edit successfully!');
+            showSuccessMessage('Cập nhật thành công!')
         },
         error: function (){
             console.log('edit failed!');
+            showErrorMessage('Cập nhật lỗi!')
         }
     })
 }
@@ -121,10 +123,12 @@ $.ajax({
     },
     success: function (){
         console.log('deleted successfully');
+        showSuccessMessage('Xoá thành công!')
         showAllPayment();
     },
     error: function (){
         console.log('deleted failed');
+        showErrorMessage('Xoá lỗi!')
     }
 })
 }
