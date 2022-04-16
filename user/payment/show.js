@@ -1,4 +1,4 @@
-function showAllCategoriesAndWallets(){
+function showAllCategoriesAndWallets(user_id){
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/paymentCategories',
@@ -18,7 +18,7 @@ function showAllCategoriesAndWallets(){
 
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8080/wallets',
+        url: `http://localhost:8080/wallets/user/${user_id}`,
         headers: {
             'Authorization': 'Bearer ' + currentUser.token
         },
@@ -35,7 +35,7 @@ function showAllCategoriesAndWallets(){
 
 }
 
-function showAllCategoriesAndWalletsForEdit(){
+function showAllCategoriesAndWalletsForEdit(user_id){
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/paymentCategories',
@@ -55,7 +55,7 @@ function showAllCategoriesAndWalletsForEdit(){
 
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8080/wallets',
+        url: `http://localhost:8080/wallets/user/${user_id}`,
         headers: {
             'Authorization': 'Bearer ' + currentUser.token
         },
@@ -80,32 +80,6 @@ function showEditForm(id){
             'Authorization': 'Bearer ' + currentUser.token
         },
         success: function (payment){
-            // let content = `<div class="form-group">
-            //         <label for="amountEdit">Số tiền</label>
-            //         <input type="number" class="form-control" id="amountEdit" value="${payment.amount}">
-            //     </div>
-            //     <div class="form-group">
-            //         <label for="dateEdit">Ngày tháng</label>
-            //         <input type="text" class="form-control" id="dateEdit" value="${payment.date}">
-            //     </div>
-            //     <div>
-            //         <img src="http://localhost:8080/image/${payment.image}" alt="anh hoa don">
-            //         </div>
-            //     <div class="form-group">
-            //         <label for="imageEdit">Image</label>
-            //         <input type="file" class="form-control" id="imageEdit">
-            //     </div>
-            //     <div class="form-group">
-            //         <label for="walletEdit">Ví</label>
-            //         <select id="walletEdit">
-            //         </select>
-            //     </div>
-            //     <div class="form-group">
-            //         <label for="categoryEdit">Nhóm</label>
-            //         <select id="categoryEdit">
-            //         </select>
-            //     </div>`;
-            // $('#edit-modal_body').html(content);
             $('#amountEdit').val(payment.amount);
             $('#dateEdit').val(payment.date);
             $('#oldImage').html(`<img src="http://localhost:8080/image/${payment.image}" alt="img">`);
@@ -165,4 +139,5 @@ function showDeleteForm(id){
 
 $(document).ready(function (){
     showAllPayment();
+    $('#create-button').html(`<button class="btn btn-sm btn-success" data-toggle="modal" data-target="#create-payment" onclick="showAllCategoriesAndWallets(${user_id})"><i class="fa fa-fw fa-plus"></i> Thêm mục chi tiêu</button>`)
 })

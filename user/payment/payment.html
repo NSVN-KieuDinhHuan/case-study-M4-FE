@@ -164,7 +164,12 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <h5 class="card-header">Danh sách khoản chi </h5>
-                            <div class="card-body"><button class="btn btn-sm btn-success" data-toggle="modal" data-target="#create-payment" onclick="showAllCategoriesAndWallets()"><i class="fa fa-fw fa-plus"></i> Thêm mục chi tiêu</button><br><br>
+                            <div class="card-body">
+                                <div id="create-button">
+<!--                                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#create-payment" onclick="showAllCategoriesAndWallets()"><i class="fa fa-fw fa-plus"></i> Thêm mục chi tiêu</button>-->
+                                </div>
+
+                                <br><br>
                                 <div class="table-responsive">
                                     <table class="table table-bordered first">
                                         <thead>
@@ -317,6 +322,7 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+<script src="init.js"></script>
 <script src="show.js"></script>
 <script src="../../login.js"></script>
 <script src="payment.js"></script>
