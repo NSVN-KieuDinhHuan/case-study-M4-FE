@@ -1,6 +1,6 @@
-let currentUser = localStorage.getItem('currentUser'); // lay ra chuoi token
-currentUser = JSON.parse(currentUser);
-let user_id = currentUser.id;
+// let currentUser = localStorage.getItem('currentUser'); // lay ra chuoi token
+// currentUser = JSON.parse(currentUser);
+// let user_id = currentUser.id;
 
 function showAllPayment() {
     $.ajax({
@@ -23,7 +23,7 @@ function showAllPayment() {
                                                     <button class="text-primary font-weight-bold text-xs" data-toggle="modal" data-target="#edit-payment" onclick="showEditForm(${data[i].id})">
                                                         <i class="fa fa-edit"></i>
                                                     </button> |
-                                                    <button href="#" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete" onclick="showDeleteForm()">
+                                                    <button class="text-secondary font-weight-bold text-xs" data-toggle="modal" data-target="#delete-payment" onclick="showDeleteForm(${data[i].id})">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </button>
                                                 </td>
@@ -60,7 +60,8 @@ function createPayment(){
         success: function (payment){
             console.log(payment);
             showAllPayment();
-            console.log('Create successfully!')
+            showSuccessMessage('Tạo mới thành công!');
+            console.log('Create successfully!');
             $('#amount').val(null);
             $('#date').val(null);
             $('#image').val(null);
@@ -68,6 +69,7 @@ function createPayment(){
             $('#category').val(null);
         },
         error: function (){
+            showErrorMessage('Tạo lỗi!');
             console.log('Created failed');
         }
     })
@@ -101,12 +103,34 @@ function editPayment(id){
         success: function (payment){
             console.log(payment);
             showAllPayment();
+            $('#imageEdit').val(null);
             console.log('edit successfully!');
+            showSuccessMessage('Cập nhật thành công!')
         },
         error: function (){
             console.log('edit failed!');
+            showErrorMessage('Cập nhật lỗi!')
         }
     })
+}
+
+function deletePayment(id){
+$.ajax({
+    type: 'DELETE',
+    url: `http://localhost:8080/payments/${id}`,
+    headers: {
+        'Authorization': 'Bearer ' + currentUser.token
+    },
+    success: function (){
+        console.log('deleted successfully');
+        showSuccessMessage('Xoá thành công!')
+        showAllPayment();
+    },
+    error: function (){
+        console.log('deleted failed');
+        showErrorMessage('Xoá lỗi!')
+    }
+})
 }
 
 

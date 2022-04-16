@@ -21,9 +21,13 @@
     <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/buttons.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/select.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
 <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
     <title>Digital-Wallet-Solution</title>
-
+<!--    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">-->
 
 
 </head>
@@ -164,7 +168,12 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <h5 class="card-header">Danh sách khoản chi </h5>
-                            <div class="card-body"><button class="btn btn-sm btn-success" data-toggle="modal" data-target="#create-payment" onclick="showAllCategoriesAndWallets()"><i class="fa fa-fw fa-plus"></i> Thêm mục chi tiêu</button><br><br>
+                            <div class="card-body">
+                                <div id="create-button">
+<!--                                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#create-payment" onclick="showAllCategoriesAndWallets()"><i class="fa fa-fw fa-plus"></i> Thêm mục chi tiêu</button>-->
+                                </div>
+
+                                <br><br>
                                 <div class="table-responsive">
                                     <table class="table table-bordered first">
                                         <thead>
@@ -275,7 +284,7 @@
                 </div>
                 <div class="form-group">
                     <label for="imageEdit">Image</label>
-                    <img src="" alt="">
+                    <p id="oldImage"></p>
                     <input type="file" class="form-control" id="imageEdit">
                 </div>
                 <div class="form-group">
@@ -296,9 +305,32 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+<div class="modal fade" id="delete-payment">
+    <div class="modal-dialog">
+        <div class="modal-content" id="delete-payment-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="delete-head">Xoá khoản chi</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="delete-modal_body">
+                <h2>Bạn có chắc chắn muốn xoá không?</h2>
+            </div>
+            <div class="modal-footer justify-content-between" id="delete-modal-footer">
+<!--                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--                <button type="button" class="btn btn-primary" onclick="deletePayment(id)" data-dismiss="modal">Delete</button>-->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="init.js"></script>
 <script src="show.js"></script>
 <script src="../../login.js"></script>
 <script src="payment.js"></script>
+<script src="../../notification.js"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
@@ -320,6 +352,13 @@
     <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="../../plugins/toastr/toastr.min.js"></script>
+
+<!--<script src="../../plugins/sweetalert2/sweetalert2.js"></script>-->
+<!--<script src="../../plugins/toastr/toastr.min.js"></script>-->
     
 </body>
  
