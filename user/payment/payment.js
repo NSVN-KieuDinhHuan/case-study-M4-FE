@@ -3,6 +3,9 @@
 // let user_id = currentUser.id;
 
 function showAllPayment() {
+    let startDate = $('#startDate').val();
+    let endDate = $('#endDate').val();
+
     $.ajax({
         type: 'GET',
         url: `http://localhost:8080/payments/user/${user_id}`,
@@ -32,6 +35,38 @@ function showAllPayment() {
             $('#payment-list').html(content);
         }
     })
+// show payment by Date
+    if(startDate != "" & endDate != ""){
+        $.ajax({
+            type: 'GET',
+            url: `http://localhost:8080/payments/user/${user_id}?startDate=${startDate}&endDate=${endDate}`,
+            headers: {
+                'Authorization': 'Bearer ' + currentUser.token
+            },
+            success: function (data) {
+                let content = "";
+                for (let i = 0; i < data.length; i++) {
+                    content += ` <tr>
+                                                <td>${i+1}</td>
+                                                <td>${data[i].amount}</td>
+                                                <td>${data[i].date}</td>
+                                                <td><img src="http://localhost:8080/image/${data[i].image}" alt="ảnh hoá đơn"></td>
+                                                <td>${data[i].paymentCategory == null ? "" : data[i].paymentCategory.name}</td>
+                                                <td>${data[i].wallet == null ? "" : data[i].wallet.name}</td>
+                                                <td class="align-right">
+                                                    <button class="text-primary font-weight-bold text-xs" data-toggle="modal" data-target="#edit-payment" onclick="showEditForm(${data[i].id})">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button> |
+                                                    <button class="text-secondary font-weight-bold text-xs" data-toggle="modal" data-target="#delete-payment" onclick="showDeleteForm(${data[i].id})">
+                                                        <i class="fa fa-trash-alt"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>`;
+                }
+                $('#payment-list').html(content);
+            }
+        })
+    }
 }
 
 

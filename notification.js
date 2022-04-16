@@ -28,6 +28,5 @@ function showErrorMessage(message){
             icon: 'error',
             title: message
         })
-
     })
 }
