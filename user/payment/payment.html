@@ -89,42 +89,22 @@
                             Menu
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Dashboard</a>
+                            <a class="nav-link" href="index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="currency.html"><i class="fa fa-fw fa-dollar-sign"></i> Currency</a>
+                            <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Quản lý ví</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="member.html"><i class="fa fa-fw fa-users"></i> Members</a>
+                            <a class="nav-link" href="deposit-form.html"><i class="fa fa-fw fa-file"></i> Quản lý khoản thu</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Payment</a>
+                            <a class="nav-link" href="/case-study-M4-FE/user/payment/payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý khoản chi</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Deposit</a>
+                            <a class="nav-link" href="withdraw-list.html"><i class="fa fa-fw fa-piggy-bank"></i> Withdraw List</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="withdraw.html"><i class="fa fa-fw fa-piggy-bank"></i> Withdrawal</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="logs.html"><i class="fa fa-fw fa-recycle"></i> Logs</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="settings.html"><i class="fa fa-fw fa-cogs"></i> Settings</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-chart-bar"></i>Reports</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="profit-report.html"><i class="fa fa-fw fa-arrow-alt-circle-left"></i> Profit</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="transaction-report.html"><i class="fa fa-fw fa-arrow-alt-circle-left"></i> Transactions</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                     </ul>
                 </div>
@@ -169,11 +149,15 @@
                         <div class="card">
                             <h5 class="card-header">Danh sách khoản chi </h5>
                             <div class="card-body">
-                                <div id="create-button">
-<!--                                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#create-payment" onclick="showAllCategoriesAndWallets()"><i class="fa fa-fw fa-plus"></i> Thêm mục chi tiêu</button>-->
+<!--                                Button tạo mới khoản chi-->
+                                <div id="create-button"> </div>
+                                <br>
+                                <div>
+                                    <input type="text" id="startDate" placeholder="Ngày bắt đầu"> <input type="text" id="endDate" placeholder="Ngày kết thúc"> <span>&nbsp</span><a href="#" onclick="showAllPayment()"><i class="fa fa-search"></i></a>
                                 </div>
 
-                                <br><br>
+<!--                                danh sách khoản chi-->
+                                <br>
                                 <div class="table-responsive">
                                     <table class="table table-bordered first">
                                         <thead>
