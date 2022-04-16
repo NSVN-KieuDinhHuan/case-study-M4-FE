@@ -26,6 +26,7 @@
         padding-bottom: 40px;
     }
     </style>
+    <script src="login.js"></script>
 </head>
 
 <body>
@@ -48,13 +49,26 @@
                             <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
                         </label>
                     </div>
-                    <a href="admin" class="btn btn-brand btn-lg btn-block">Login as Admin</a>
-                    <a href="member" class="btn btn-secondary btn-lg btn-block">Login as Member</a>
+                    <div class="form-group">
+<!--                    <a href="user" class="btn btn-brand btn-lg btn-block">Login as Admin</a>-->
+                    <a  onclick="login()" class="btn btn-secondary btn-lg btn-block">Login as Member</a>
+                    </div>
+                    <hr><p>Or</p>
+                    <div class="form-group row pt-0">
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                            <button class="btn btn-block btn-social btn-facebook " type="button">Facebook</button>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <button class="btn  btn-block btn-social btn-google-plus" type="button">Google</button>
+                        </div>
+                    </div>
                 </form>
             </div>
+
             <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
-                    <a href="register.php" class="footer-link">Create An Account</a></div>
+                    <a href="register.html" class="footer-link">Create An Account</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Forgot Password</a>
                 </div>
