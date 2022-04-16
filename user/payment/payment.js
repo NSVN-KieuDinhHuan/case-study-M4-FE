@@ -60,6 +60,7 @@ function createPayment(){
         success: function (payment){
             console.log(payment);
             showAllPayment();
+            showSuccessMessage('Create successfully!')
             console.log('Create successfully!')
             $('#amount').val(null);
             $('#date').val(null);
@@ -68,6 +69,7 @@ function createPayment(){
             $('#category').val(null);
         },
         error: function (){
+            showErrorMessage('Created failed!');
             console.log('Created failed');
         }
     })

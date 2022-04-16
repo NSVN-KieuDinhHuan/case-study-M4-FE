@@ -83,41 +83,41 @@ function showEditForm(id){
             $('#amountEdit').val(payment.amount);
             $('#dateEdit').val(payment.date);
             $('#oldImage').html(`<img src="http://localhost:8080/image/${payment.image}" alt="img">`);
-            showAllCategoriesAndWalletsForEdit();
+            showAllCategoriesAndWalletsForEdit(user_id);
 
             // $.ajax({
             //     type:'GET',
             //     url: 'http://localhost:8080/paymentCategories',
             //     success: function (data){
-            //         let content =  `
-            //             <option>Chọn nhóm</option>`;
+            //         let content1 =  `<option>Chọn nhóm</option>`;
             //         for (let category of data) {
             //             if(payment.paymentCategory.id == category.id){
-            //                 content += `
+            //                 content1 += `
             //             <option value="${category.id}" selected>${category.name}</option>`;
-            //             } else{
-            //                 content += `
-            //             <option value="${category.id}">${category.name}</option>`;}
+            //             } else {
+            //                 content1 += `
+            //             <option value="${category.id}">${category.name}</option>`;
+            //             }
             //         }
-            //         $('#categoryEdit').html(content);
+            //         $('#categoryEdit').html(content1);
             //     }
             // })
             //
             // $.ajax({
             //     type:'GET',
-            //     url: 'http://localhost:8080/wallets',
+            //     url: `http://localhost:8080/wallets/user/${user_id}`,
             //     success: function (data){
-            //         let content =  `
+            //         let content2 =  `
             //             <option>Chọn ví</option>`;
-            //         for (let category of data) {
-            //             if(payment.wallet.id == category.id){
-            //                 content += `
-            //             <option value="${category.id}" selected>${category.name}</option>`;
+            //         for (let wallet of data) {
+            //             if(payment.wallet.id == wallet.id){
+            //                 content2 += `
+            //             <option value="${wallet.id}" selected>${wallet.name}</option>`;
             //             } else{
-            //                 content += `
-            //             <option value="${category.id}">${category.name}</option>`;}
+            //                 content2 += `
+            //             <option value="${wallet.id}">${wallet.name}</option>`;}
             //         }
-            //         $('#walletEdit').html(content);
+            //         $('#walletEdit').html(content2);
             //     }
             // })
             $('#edit-modal-footer').html(

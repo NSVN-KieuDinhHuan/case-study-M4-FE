@@ -15,7 +15,7 @@
 }(this, function () {
 
   /**
-   * Chartist.js plugin to display a data label on top of the points in a line chart.
+   * Chartist.js plugins to display a data label on top of the points in a line chart.
    *
    */
   /* global Chartist */
