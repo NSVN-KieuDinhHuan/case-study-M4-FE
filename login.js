@@ -20,7 +20,7 @@ function login(){
             if(role=="ROLE_ADMIN"){
                 location.href = 'admin/index.html'
             }else {
-                location.href = 'users/index.html'
+                location.href = 'user/index.html'
             }
 
         }

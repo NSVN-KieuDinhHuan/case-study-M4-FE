@@ -1,6 +1,6 @@
-// let currentUser = localStorage.getItem('currentUser'); // lay ra chuoi token
-// currentUser = JSON.parse(currentUser);
-// let user_id = currentUser.id;
+let currentUser = localStorage.getItem('currentUser'); // lay ra chuoi token
+currentUser = JSON.parse(currentUser);
+let user_id = currentUser.id;
 
 function showAllPayment() {
     let startDate = $('#startDate').val();
@@ -150,22 +150,21 @@ function editPayment(id){
 }
 
 function deletePayment(id){
-$.ajax({
-    type: 'DELETE',
-    url: `http://localhost:8080/payments/${id}`,
-    headers: {
-        'Authorization': 'Bearer ' + currentUser.token
-    },
-    success: function (){
-        console.log('deleted successfully');
-        showSuccessMessage('Xoá thành công!')
-        showAllPayment();
-    },
-    error: function (){
-        console.log('deleted failed');
-        showErrorMessage('Xoá lỗi!')
-    }
-})
+    $.ajax({
+        type: 'DELETE',
+        url: `http://localhost:8080/payments/${id}`,
+        headers: {
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        success: function (){
+            console.log('deleted successfully');
+            showSuccessMessage('Xoá thành công!')
+            showAllPayment();
+        },
+        error: function (){
+            console.log('deleted failed');
+            showErrorMessage('Xoá lỗi!')
+        }
+    })
 }
-
 
