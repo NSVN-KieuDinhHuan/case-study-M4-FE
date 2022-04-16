@@ -8550,7 +8550,7 @@ external_jQuery_default.a.summernote = external_jQuery_default.a.extend(external
 /***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
+// extracted by mini-css-extract-plugins
 
 /***/ }),
 

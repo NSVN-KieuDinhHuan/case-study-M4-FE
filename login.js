@@ -15,12 +15,16 @@ function login(){
         },
         success: function (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
+<<<<<<< HEAD
             let  role=currentUser.roles[0].authority;
             if(role=="ROLE_ADMIN"){
                 location.href = 'admin/index.html'
             }else {
                 location.href = 'users/index.html'
             }
+=======
+            location.href = 'user/paymentCategory.html'
+>>>>>>> 009a773a136984705f6837f3590ad929dd2b3ef6
         }
     });
 }
