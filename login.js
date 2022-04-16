@@ -15,7 +15,7 @@ function login(){
         },
         success: function (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            location.href = 'user/paymentCategory.html'
+            location.href = 'user/index.html'
         }
     });
 }
