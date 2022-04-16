@@ -154,6 +154,15 @@ function showEditForm(id){
     })
 }
 
+function showDeleteForm(id){
+    let content = `
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="deletePayment(${id})" data-dismiss="modal">Delete</button>`;
+    $('#delete-modal-footer').html(content);
+}
+
+
+
 $(document).ready(function (){
     showAllPayment();
 })

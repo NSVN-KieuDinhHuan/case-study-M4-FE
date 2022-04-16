@@ -23,7 +23,7 @@ function showAllPayment() {
                                                     <button class="text-primary font-weight-bold text-xs" data-toggle="modal" data-target="#edit-payment" onclick="showEditForm(${data[i].id})">
                                                         <i class="fa fa-edit"></i>
                                                     </button> |
-                                                    <button href="#" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete" onclick="showDeleteForm()">
+                                                    <button class="text-secondary font-weight-bold text-xs" data-toggle="modal" data-target="#delete-payment" onclick="showDeleteForm(${data[i].id})">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </button>
                                                 </td>
@@ -108,6 +108,23 @@ function editPayment(id){
             console.log('edit failed!');
         }
     })
+}
+
+function deletePayment(id){
+$.ajax({
+    type: 'DELETE',
+    url: `http://localhost:8080/payments/${id}`,
+    headers: {
+        'Authorization': 'Bearer ' + currentUser.token
+    },
+    success: function (){
+        console.log('deleted successfully');
+        showAllPayment();
+    },
+    error: function (){
+        console.log('deleted failed');
+    }
+})
 }
 
 
