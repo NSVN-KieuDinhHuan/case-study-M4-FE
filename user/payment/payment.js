@@ -101,6 +101,7 @@ function editPayment(id){
         success: function (payment){
             console.log(payment);
             showAllPayment();
+            $('#imageEdit').val(null);
             console.log('edit successfully!');
         },
         error: function (){
