@@ -22,9 +22,13 @@ function register() {
             'Content-Type': 'application/json'
         },
         success: function () {
+<<<<<<< HEAD
 
             location.href = '/case-Study-M4-FE/login.html';
 
+=======
+            location.href = 'user/deposit.html';
+>>>>>>> feature-deposit
         },
         error: function () {
 

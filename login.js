@@ -15,6 +15,7 @@ function login(){
         },
         success: function (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
+<<<<<<< HEAD
 
             let  role=currentUser.roles[0].authority;
             if(role=="ROLE_ADMIN"){
@@ -23,6 +24,9 @@ function login(){
                 location.href = 'user/index.html'
             }
 
+=======
+            location.href = 'user/index.html'
+>>>>>>> feature-deposit
         }
     });
 }
