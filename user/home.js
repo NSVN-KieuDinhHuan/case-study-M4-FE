@@ -43,11 +43,33 @@ function showWalletDetails(id){
 
 }
 
-// $(document).ready(function (){
-//     showAllWallets();
-// })
-
+function showAllPaymentForHome() {
+    $.ajax({
+        type: 'GET',
+        url: `http://localhost:8080/payments/user/${user_id}`,
+        headers: {
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        success: function (data) {
+            let totalPaymentAmount = 0;
+            let content = "";
+            for (let i = 0; i < data.length; i++) {
+                totalPaymentAmount += data[i].amount;
+                content += `<tr>
+                                            <td>${i+1}</td>
+                                            <td>${data[i].amount}</td>
+                                            <td>${data[i].date}
+                                            </td>
+                                            <td>${data[i].paymentCategory == null ? "" : data[i].paymentCategory.name}</td>
+                                        </tr>`;
+            }
+            $('#payments-list').html(content);
+            $('#totalPaymentAmount').html(totalPaymentAmount);
+        }
+    })
+}
 
 $(document).ready(function (){
     showAllWallets();
+    showAllPaymentForHome()
 })
