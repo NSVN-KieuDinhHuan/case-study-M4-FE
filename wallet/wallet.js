@@ -57,7 +57,11 @@ function createNewWallet() {
     wallet.append('name', name);
     wallet.append('currentAmount', currentAmount);
     wallet.append('icon', icon.prop('files')[0]);
+<<<<<<< HEAD
     wallet.append('user', user_id);
+=======
+    wallet.append('user', user_id); //đoạn này cần liên kết wallet với user_id
+>>>>>>> dev
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/wallets',
