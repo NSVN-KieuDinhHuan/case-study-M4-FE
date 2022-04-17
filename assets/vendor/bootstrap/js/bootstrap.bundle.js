@@ -3874,7 +3874,11 @@
        * @private
        * @type {Object}
        * @deprecated since version 1.8
-       * @member Utils
+<<<<<<< HEAD
+       * @users Utils
+=======
+       * @user Utils
+>>>>>>> 009a773a136984705f6837f3590ad929dd2b3ef6
        * @memberof Popper
        */
 
