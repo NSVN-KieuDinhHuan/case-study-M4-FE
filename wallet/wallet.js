@@ -1,5 +1,6 @@
 let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);
+
 function getAllWallet() {
     $.ajax({
         type: 'GET',
@@ -26,7 +27,7 @@ function getAllWallet() {
     })
 }
 
-function showCreateWallet(){
+function showCreateWallet() {
     $('#createName').val(null);
     $('#inputBalance').val(null);
     $('#createIcon').val(null);
@@ -46,15 +47,17 @@ function showCreateWallet(){
     })
 
 }
+
 function createNewWallet() {
     let name = $('#createName').val();
     let currentAmount = $('#inputBalance').val();
     let icon = $('#createIcon');
+    let user_id = currentUser.id;
     let wallet = new FormData();
     wallet.append('name', name);
     wallet.append('currentAmount', currentAmount);
     wallet.append('icon', icon.prop('files')[0]);
-    wallet.append('user', user); //đoạn này cần liên kết wallet với user_id
+    wallet.append('user', user_id);
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/wallets',
@@ -215,9 +218,9 @@ function changeUser() {
 }
 
 $(document).ready(function () {
-    if(currentUser!=null){
+    if (currentUser != null) {
         getAllWallet();
     } else {
-        location.href='/case-study-M4-FE/auth/login.html'
+        location.href = '/case-study-M4-FE/auth/login.html'
     }
 })
