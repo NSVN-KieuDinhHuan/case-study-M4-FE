@@ -1,6 +1,5 @@
 let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);
-
 function getAllWallet() {
     $.ajax({
         type: 'GET',
@@ -27,7 +26,7 @@ function getAllWallet() {
     })
 }
 
-function showCreateWallet() {
+function showCreateWallet(){
     $('#createName').val(null);
     $('#inputBalance').val(null);
     $('#createIcon').val(null);
@@ -47,7 +46,6 @@ function showCreateWallet() {
     })
 
 }
-
 function createNewWallet() {
     let name = $('#createName').val();
     let currentAmount = $('#inputBalance').val();
@@ -57,11 +55,7 @@ function createNewWallet() {
     wallet.append('name', name);
     wallet.append('currentAmount', currentAmount);
     wallet.append('icon', icon.prop('files')[0]);
-<<<<<<< HEAD
-    wallet.append('user', user_id);
-=======
     wallet.append('user', user_id); //đoạn này cần liên kết wallet với user_id
->>>>>>> dev
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/wallets',
@@ -157,6 +151,7 @@ function showEditWallet(id) {
                 headers: {
                     'Authorization': 'Bearer ' + currentUser.token,
                 },
+                //đoạn này cần liên kết wallet với user_id
                 success: function (users) {
                     let content = `<option>Thay người dùng thành</option>`
                     for (let user of users) {
@@ -221,9 +216,9 @@ function changeUser() {
 }
 
 $(document).ready(function () {
-    if (currentUser != null) {
+    if(currentUser!=null){
         getAllWallet();
     } else {
-        location.href = '/case-study-M4-FE/auth/login.html'
+        location.href='/case-study-M4-FE/auth/login.html'
     }
 })
