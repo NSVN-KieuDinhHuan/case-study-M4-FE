@@ -50,11 +50,12 @@ function createNewWallet() {
     let name = $('#createName').val();
     let currentAmount = $('#inputBalance').val();
     let icon = $('#createIcon');
+    let user_id = currentUser.id;
     let wallet = new FormData();
     wallet.append('name', name);
     wallet.append('currentAmount', currentAmount);
     wallet.append('icon', icon.prop('files')[0]);
-    wallet.append('user', user); //đoạn này cần liên kết wallet với user_id
+    wallet.append('user', user_id); //đoạn này cần liên kết wallet với user_id
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/wallets',
