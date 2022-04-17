@@ -153,7 +153,6 @@ function showEditWallet(id) {
                 headers: {
                     'Authorization': 'Bearer ' + currentUser.token,
                 },
-                //đoạn này cần liên kết wallet với user_id
                 success: function (users) {
                     let content = `<option>Thay người dùng thành</option>`
                     for (let user of users) {
