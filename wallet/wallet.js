@@ -55,7 +55,7 @@ function createNewWallet() {
     wallet.append('name', name);
     wallet.append('currentAmount', currentAmount);
     wallet.append('icon', icon.prop('files')[0]);
-    wallet.append('user', user_id); //đoạn này cần liên kết wallet với user_id
+    wallet.append('user', user_id);
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/wallets',
@@ -91,7 +91,6 @@ function showSuccessMessage(message) {
         })
     });
 }
-
 
 function showErrorMessage(message) {
     $(function () {
@@ -135,7 +134,7 @@ function showDeleteWallet(id) {
 function showEditWallet(id) {
     let title = 'Chỉnh sửa thông tin ví';
     let footer = `<button class="btn btn-secondary" data-dismiss="modal" type="button">Đóng</button>
-                    <button class="btn btn-primary" onclick="showEditWallet(${id})" type="button">Cập nhật</button>`;
+                    <button class="btn btn-primary" data-dismiss="modal" onclick="editWallet(${id})" type="button">Cập nhật</button>`;
     $('#edit-wallet-title').html(title);
     $('#edit-wallet-footer').html(footer);
     $.ajax({
@@ -151,7 +150,6 @@ function showEditWallet(id) {
                 headers: {
                     'Authorization': 'Bearer ' + currentUser.token,
                 },
-                //đoạn này cần liên kết wallet với user_id
                 success: function (users) {
                     let content = `<option>Thay người dùng thành</option>`
                     for (let user of users) {
@@ -175,13 +173,10 @@ function editWallet(id) {
         name: name,
         currentAmount: currentAmount,
         icon: icon,
-        user: {
-            id: user
-        }
     }
     $.ajax({
         type: 'PUT',
-        url: `http://localhost:8080/products/${id}`,
+        url: `http://localhost:8080/wallets/${id}`,
         data: JSON.stringify(wallet),
         headers: {
             'Accept': 'application/json',
@@ -198,22 +193,22 @@ function editWallet(id) {
     })
 }
 
-function changeUser() {
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8080/users',
-        headers: {
-            'Authorization': 'Bearer ' + currentUser.token,
-        },
-        success: function (users) {
-            let content = `<option>Chọn lại người dùng</option>`
-            for (let user of users) {
-                content += `<option value="${user.id}">${user.name}</option>`
-            }
-            $('#editUser').html(content);
-        }
-    })
-}
+// function changeUser() {
+//     $.ajax({
+//         type: 'GET',
+//         url: 'http://localhost:8080/users',
+//         headers: {
+//             'Authorization': 'Bearer ' + currentUser.token,
+//         },
+//         success: function (users) {
+//             let content = `<option>Chọn lại người dùng</option>`
+//             for (let user of users) {
+//                 content += `<option value="${user.id}">${user.name}</option>`
+//             }
+//             $('#editUser').html(content);
+//         }
+//     })
+// }
 
 $(document).ready(function () {
     if(currentUser!=null){
