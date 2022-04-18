@@ -172,7 +172,7 @@ function editWallet(id) {
     let wallet = {
         name: name,
         currentAmount: currentAmount,
-        icon: icon
+        icon: icon,
     }
     $.ajax({
         type: 'PUT',
