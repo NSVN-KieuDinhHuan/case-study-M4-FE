@@ -8485,7 +8485,7 @@ module.exports = function(Chart) {
 		initialize: function() {
 			var me = this;
 
-			// Before init plugin notification
+			// Before init plugins notification
 			plugins.notify(me, 'beforeInit');
 
 			helpers.retinaScale(me, me.options.devicePixelRatio);
@@ -8502,7 +8502,7 @@ module.exports = function(Chart) {
 			me.buildOrUpdateScales();
 			me.initToolTip();
 
-			// After init plugin notification
+			// After init plugins notification
 			plugins.notify(me, 'afterInit');
 
 			return me;
@@ -8780,7 +8780,7 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Updates the chart layout unless a plugin returns `false` to the `beforeLayout`
+		 * Updates the chart layout unless a plugins returns `false` to the `beforeLayout`
 		 * hook, in which case, plugins will not be called on `afterLayout`.
 		 * @private
 		 */
@@ -8805,7 +8805,7 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Updates all datasets unless a plugin returns `false` to the `beforeDatasetsUpdate`
+		 * Updates all datasets unless a plugins returns `false` to the `beforeDatasetsUpdate`
 		 * hook, in which case, plugins will not be called on `afterDatasetsUpdate`.
 		 * @private
 		 */
@@ -8824,7 +8824,7 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Updates dataset at index unless a plugin returns `false` to the `beforeDatasetUpdate`
+		 * Updates dataset at index unless a plugins returns `false` to the `beforeDatasetUpdate`
 		 * hook, in which case, plugins will not be called on `afterDatasetUpdate`.
 		 * @private
 		 */
@@ -8943,7 +8943,7 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Draws all datasets unless a plugin returns `false` to the `beforeDatasetsDraw`
+		 * Draws all datasets unless a plugins returns `false` to the `beforeDatasetsDraw`
 		 * hook, in which case, plugins will not be called on `afterDatasetsDraw`.
 		 * @private
 		 */
@@ -8965,7 +8965,7 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Draws dataset at index unless a plugin returns `false` to the `beforeDatasetDraw`
+		 * Draws dataset at index unless a plugins returns `false` to the `beforeDatasetDraw`
 		 * hook, in which case, plugins will not be called on `afterDatasetDraw`.
 		 * @private
 		 */
@@ -8988,7 +8988,7 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Draws tooltip unless a plugin returns `false` to the `beforeTooltipDraw`
+		 * Draws tooltip unless a plugins returns `false` to the `beforeTooltipDraw`
 		 * hook, in which case, plugins will not be called on `afterTooltipDraw`.
 		 * @private
 		 */
@@ -11188,7 +11188,7 @@ defaults._set('global', {
 });
 
 /**
- * The plugin service singleton
+ * The plugins service singleton
  * @namespace Chart.plugins
  * @since 2.1.0
  */
@@ -11201,15 +11201,15 @@ module.exports = {
 
 	/**
 	 * This identifier is used to invalidate the descriptors cache attached to each chart
-	 * when a global plugin is registered or unregistered. In this case, the cache ID is
+	 * when a global plugins is registered or unregistered. In this case, the cache ID is
 	 * incremented and descriptors are regenerated during following API calls.
 	 * @private
 	 */
 	_cacheId: 0,
 
 	/**
-	 * Registers the given plugin(s) if not already registered.
-	 * @param {Array|Object} plugins plugin instance(s).
+	 * Registers the given plugins(s) if not already registered.
+	 * @param {Array|Object} plugins plugins instance(s).
 	 */
 	register: function(plugins) {
 		var p = this._plugins;
@@ -11223,8 +11223,8 @@ module.exports = {
 	},
 
 	/**
-	 * Unregisters the given plugin(s) only if registered.
-	 * @param {Array|Object} plugins plugin instance(s).
+	 * Unregisters the given plugins(s) only if registered.
+	 * @param {Array|Object} plugins plugins instance(s).
 	 */
 	unregister: function(plugins) {
 		var p = this._plugins;
@@ -11257,8 +11257,8 @@ module.exports = {
 	},
 
 	/**
-	 * Returns all registered plugin instances.
-	 * @returns {Array} array of plugin objects.
+	 * Returns all registered plugins instances.
+	 * @returns {Array} array of plugins objects.
 	 * @since 2.1.5
 	 */
 	getAll: function() {
@@ -11267,10 +11267,10 @@ module.exports = {
 
 	/**
 	 * Calls enabled plugins for `chart` on the specified hook and with the given args.
-	 * This method immediately returns as soon as a plugin explicitly returns false. The
+	 * This method immediately returns as soon as a plugins explicitly returns false. The
 	 * returned value can be used, for instance, to interrupt the current action.
 	 * @param {Object} chart - The chart instance for which plugins should be called.
-	 * @param {String} hook - The name of the plugin method to call (e.g. 'beforeUpdate').
+	 * @param {String} hook - The name of the plugins method to call (e.g. 'beforeUpdate').
 	 * @param {Array} [args] - Extra arguments to apply to the hook call.
 	 * @returns {Boolean} false if any of the plugins return false, else returns true.
 	 */
@@ -11297,7 +11297,7 @@ module.exports = {
 
 	/**
 	 * Returns descriptors of enabled plugins for the given chart.
-	 * @returns {Array} [{ plugin, options }]
+	 * @returns {Array} [{ plugins, options }]
 	 * @private
 	 */
 	descriptors: function(chart) {
@@ -11340,7 +11340,7 @@ module.exports = {
 	},
 
 	/**
-	 * Invalidates cache for the given chart: descriptors hold a reference on plugin option,
+	 * Invalidates cache for the given chart: descriptors hold a reference on plugins option,
 	 * but in some cases, this reference can be changed by the user when updating options.
 	 * https://github.com/chartjs/Chart.js/issues/5111#issuecomment-355934167
 	 * @private
@@ -11359,20 +11359,20 @@ module.exports = {
  * @method IPlugin#beforeInit
  * @desc Called before initializing `chart`.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#afterInit
  * @desc Called after `chart` has been initialized and before the first update.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeUpdate
- * @desc Called before updating `chart`. If any plugin returns `false`, the update
+ * @desc Called before updating `chart`. If any plugins returns `false`, the update
  * is cancelled (and thus subsequent render(s)) until another `update` is triggered.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart update.
  */
 /**
@@ -11380,14 +11380,14 @@ module.exports = {
  * @desc Called after `chart` has been updated and before rendering. Note that this
  * hook will not be called if the chart update has been previously cancelled.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeDatasetsUpdate
- * @desc Called before updating the `chart` datasets. If any plugin returns `false`,
+ * @desc Called before updating the `chart` datasets. If any plugins returns `false`,
  * the datasets update is cancelled until another `update` is triggered.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} false to cancel the datasets update.
  * @since version 2.1.5
 */
@@ -11396,18 +11396,18 @@ module.exports = {
  * @desc Called after the `chart` datasets have been updated. Note that this hook
  * will not be called if the datasets update has been previously cancelled.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @since version 2.1.5
  */
 /**
  * @method IPlugin#beforeDatasetUpdate
- * @desc Called before updating the `chart` dataset at the given `args.index`. If any plugin
+ * @desc Called before updating the `chart` dataset at the given `args.index`. If any plugins
  * returns `false`, the datasets update is cancelled until another `update` is triggered.
  * @param {Chart} chart - The chart instance.
  * @param {Object} args - The call arguments.
  * @param {Number} args.index - The dataset index.
  * @param {Object} args.meta - The dataset metadata.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart datasets drawing.
  */
 /**
@@ -11418,14 +11418,14 @@ module.exports = {
  * @param {Object} args - The call arguments.
  * @param {Number} args.index - The dataset index.
  * @param {Object} args.meta - The dataset metadata.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeLayout
- * @desc Called before laying out `chart`. If any plugin returns `false`,
+ * @desc Called before laying out `chart`. If any plugins returns `false`,
  * the layout update is cancelled until another `update` is triggered.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart layout.
  */
 /**
@@ -11433,14 +11433,14 @@ module.exports = {
  * @desc Called after the `chart` has been layed out. Note that this hook will not
  * be called if the layout update has been previously cancelled.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeRender
- * @desc Called before rendering `chart`. If any plugin returns `false`,
+ * @desc Called before rendering `chart`. If any plugins returns `false`,
  * the rendering is cancelled until another `render` is triggered.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart rendering.
  */
 /**
@@ -11448,16 +11448,16 @@ module.exports = {
  * @desc Called after the `chart` has been fully rendered (and animation completed). Note
  * that this hook will not be called if the rendering has been previously cancelled.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeDraw
  * @desc Called before drawing `chart` at every animation frame specified by the given
- * easing value. If any plugin returns `false`, the frame drawing is cancelled until
+ * easing value. If any plugins returns `false`, the frame drawing is cancelled until
  * another `render` is triggered.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart drawing.
  */
 /**
@@ -11466,15 +11466,15 @@ module.exports = {
  * that this hook will not be called if the drawing has been previously cancelled.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeDatasetsDraw
- * @desc Called before drawing the `chart` datasets. If any plugin returns `false`,
+ * @desc Called before drawing the `chart` datasets. If any plugins returns `false`,
  * the datasets drawing is cancelled until another `render` is triggered.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart datasets drawing.
  */
 /**
@@ -11483,19 +11483,19 @@ module.exports = {
  * will not be called if the datasets drawing has been previously cancelled.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeDatasetDraw
  * @desc Called before drawing the `chart` dataset at the given `args.index` (datasets
- * are drawn in the reverse order). If any plugin returns `false`, the datasets drawing
+ * are drawn in the reverse order). If any plugins returns `false`, the datasets drawing
  * is cancelled until another `render` is triggered.
  * @param {Chart} chart - The chart instance.
  * @param {Object} args - The call arguments.
  * @param {Number} args.index - The dataset index.
  * @param {Object} args.meta - The dataset metadata.
  * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart datasets drawing.
  */
 /**
@@ -11508,17 +11508,17 @@ module.exports = {
  * @param {Number} args.index - The dataset index.
  * @param {Object} args.meta - The dataset metadata.
  * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeTooltipDraw
- * @desc Called before drawing the `tooltip`. If any plugin returns `false`,
+ * @desc Called before drawing the `tooltip`. If any plugins returns `false`,
  * the tooltip drawing is cancelled until another `render` is triggered.
  * @param {Chart} chart - The chart instance.
  * @param {Object} args - The call arguments.
  * @param {Object} args.tooltip - The tooltip.
  * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  * @returns {Boolean} `false` to cancel the chart tooltip drawing.
  */
 /**
@@ -11529,15 +11529,15 @@ module.exports = {
  * @param {Object} args - The call arguments.
  * @param {Object} args.tooltip - The tooltip.
  * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#beforeEvent
- * @desc Called before processing the specified `event`. If any plugin returns `false`,
+ * @desc Called before processing the specified `event`. If any plugins returns `false`,
  * the event will be discarded.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {IEvent} event - The event object.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#afterEvent
@@ -11545,20 +11545,20 @@ module.exports = {
  * will not be called if the `event` has been previously discarded.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {IEvent} event - The event object.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#resize
  * @desc Called after the chart as been resized.
  * @param {Chart.Controller} chart - The chart instance.
  * @param {Number} size - The new canvas display size (eq. canvas.style width & height).
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 /**
  * @method IPlugin#destroy
  * @desc Called after the chart as been destroyed.
  * @param {Chart.Controller} chart - The chart instance.
- * @param {Object} options - The plugin options.
+ * @param {Object} options - The plugins options.
  */
 
 },{"25":25,"45":45}],32:[function(require,module,exports){
@@ -11766,7 +11766,15 @@ module.exports = function(Chart) {
 			me.afterDataLimits();
 
 			// Ticks - `this.ticks` is now DEPRECATED!
+<<<<<<< HEAD
+<<<<<<< HEAD
+			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` users
+=======
 			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` user
+>>>>>>> 009a773a136984705f6837f3590ad929dd2b3ef6
+=======
+			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` user
+>>>>>>> feature-deposit
 			// and must not be accessed directly from outside this class. `this.ticks` being
 			// around for long time and not marked as private, we can't change its structure
 			// without unexpected breaking changes. If you need to access the scale ticks,
@@ -16437,9 +16445,9 @@ module.exports = {
 	id: 'legend',
 
 	/**
-	 * Backward compatibility: since 2.1.5, the legend is registered as a plugin, making
+	 * Backward compatibility: since 2.1.5, the legend is registered as a plugins, making
 	 * Chart.Legend obsolete. To avoid a breaking change, we export the Legend as part of
-	 * the plugin, which one will be re-exposed in the chart.js file.
+	 * the plugins, which one will be re-exposed in the chart.js file.
 	 * https://github.com/chartjs/Chart.js/pull/2640
 	 * @private
 	 */
@@ -16698,9 +16706,9 @@ module.exports = {
 	id: 'title',
 
 	/**
-	 * Backward compatibility: since 2.1.5, the title is registered as a plugin, making
+	 * Backward compatibility: since 2.1.5, the title is registered as a plugins, making
 	 * Chart.Title obsolete. To avoid a breaking change, we export the Title as part of
-	 * the plugin, which one will be re-exposed in the chart.js file.
+	 * the plugins, which one will be re-exposed in the chart.js file.
 	 * https://github.com/chartjs/Chart.js/pull/2640
 	 * @private
 	 */
