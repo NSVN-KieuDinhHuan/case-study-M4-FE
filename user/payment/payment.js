@@ -1,6 +1,6 @@
-let currentUser = localStorage.getItem('currentUser'); // lay ra chuoi token
-currentUser = JSON.parse(currentUser);
-let user_id = currentUser.id;
+// let currentUser = localStorage.getItem('currentUser'); // lay ra chuoi token
+// currentUser = JSON.parse(currentUser);
+// let user_id = currentUser.id;
 
 function showAllPayment() {
     let startDate = $('#startDate').val();
@@ -10,11 +10,16 @@ function showAllPayment() {
         type: 'GET',
         url: `http://localhost:8080/payments/user/${user_id}`,
         headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + currentUser.token
+
         },
         success: function (data) {
+
             let content = "";
             for (let i = 0; i < data.length; i++) {
+                let t=data[i].date;
                 content += ` <tr>
                                                 <td>${i+1}</td>
                                                 <td>${data[i].amount}</td>
@@ -37,6 +42,10 @@ function showAllPayment() {
     })
 // show payment by Date
     if(startDate != "" & endDate != ""){
+        let startDateParts=startDate.split('-');
+        startDate=startDateParts[0]+"/"+startDateParts[1]+"/"+ startDateParts[2];
+        let endDatePart=endDate.split('-');
+        endDate=endDatePart[0]+"/"+endDatePart[1]+"/"+ endDatePart[2];
         $.ajax({
             type: 'GET',
             url: `http://localhost:8080/payments/user/${user_id}?startDate=${startDate}&endDate=${endDate}`,

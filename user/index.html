@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -79,7 +80,7 @@
                             Menu
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Trang chủ</a>
+                            <a class="nav-link" href="/case-study-M4-FE/user/index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Quản lý ví</a>
@@ -133,66 +134,144 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    
+
                     <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3><span>&nbsp&nbsp&nbsp&nbspTổng số tiền hiện có: </span><span id="totalAmount"></span><span> VND</span></h3>
+                    </div>
+                    <div class="row" id="wallet-list">
+<!--                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">-->
+<!--                            <div class="card">-->
+<!--                                <h5 class="card-header">Tiền mặt</h5>-->
+<!--                                <div class="card-body">-->
+<!--                                    <div class="metric-value d-inline-block">-->
+<!--                                        <h1 class="mb-1">VND 9,000</h1>-->
+<!--                                    </div>-->
+<!--                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">-->
+<!--                                        <span class="ml-1">25%</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="card-footer text-center bg-white">-->
+<!--                                    <a href="#" class="card-link" onclick="showWalletDetails()">View Details</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+<!--                    wallet details-->
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Current Money</h5>
                                 <div class="card-body">
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$9,000</h1>
+                                        <div class="metric-value d-inline-block">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <img src="../assets/images/coins.ph.png" width="100"/>
+                                                </div>
+                                                <div class="col-lg-6" style="margin-left:10px">
+                                                    <p>John Doe</p>
+                                                    <p>Limit: 50,000 - 100,000 USD</p>
+                                                    <p>Charge: 50 USD +3%</p>
+                                                    <p>Charge: 50 USD +3%</p>
+                                                    <p>Charge: 50 USD +3%</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">25%</span>
-                                    </div>
-                                </div>
-                                <div class="card-body bg-light p-t-40 p-b-40">
-                                    <div id="sparkline-revenue"></div>
-                                </div>
-                                <div class="card-footer text-center bg-white">
-                                    <a href="#" class="card-link">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Number of Deposits</h5>
-                                <div class="card-body">
-                                    <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">132</h1>
-                                    </div>
-                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">25%</span>
-                                    </div>
-                                </div>
-                                <div class="card-body bg-light p-t-40 p-b-40">
-                                    <div id="sparkline-revenue3"></div>
-                                </div>
-                                <div class="card-footer text-center bg-white">
-                                    <a href="#" class="card-link">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Number of Withdrawals</h5>
-                                <div class="card-body">
-                                    <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">20</h1>
-                                    </div>
-                                    <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                        <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">15%</span>
-                                    </div>
-                                </div>
-                                <div class="card-body text-center bg-light p-t-40 p-b-40">
-                                    <div id="sparkline-revenue2"></div>
-                                </div>
-                                <div class="card-footer text-center bg-white">
-                                    <a href="#" class="card-link">View Details</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+<!--                    chi tiết thu chi-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Tổng hợp khoản thu</h3>
+                                    <h4><span></span></h4>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Số tiền</th>
+                                            <th>Ngày tháng</th>
+                                            <th>Note</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="deposit-list">
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Update software</td>
+                                            <td>
+                                               2022/04/01
+                                            </td>
+                                            <td>New</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer clearfix">
+                                    <ul class="pagination pagination-sm m-0 float-right">
+                                        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Tổng hợp khoản chi</h3>
+                                    <h4>Total: <span id="totalPaymentAmount"></span> VND</h4>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Số tiền</th>
+                                            <th>Ngày tháng</th>
+                                            <th>Note</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="payments-list">
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Update software</td>
+                                            <td>
+                                               2022/04/01
+                                            </td>
+                                            <td>New</td>
+                                        </tr>
+                                        <tr></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer clearfix">
+                                    <ul class="pagination pagination-sm m-0 float-right">
+                                        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+
         </div>
         <!-- ============================================================== -->
         <!-- end wrapper  -->
@@ -202,6 +281,12 @@
     <!-- end main wrapper  -->
         </div>
 </div>
+
+
+<script src="home.js"></script>
+<script src="init.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!-- ============================================================== -->
 <!-- jquery 3.3.1  -->
 <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>

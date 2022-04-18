@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:dateFormat="http://www.w3.org/1999/xhtml">
 
 <head>
     <!-- Required meta tags -->
@@ -51,11 +51,11 @@
             </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto navbar-right-top">
-                    <li class="nav-item">
-                        <div id="custom-search" class="top-search-bar">
-                            <input class="form-control" type="text" placeholder="Search..">
-                        </div>
-                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <div id="custom-search" class="top-search-bar">-->
+<!--                            <input class="form-control" type="text" placeholder="Search..">-->
+<!--                        </div>-->
+<!--                    </li>-->
                     <li class="nav-item dropdown nav-user">
                         <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                         <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
@@ -91,7 +91,7 @@
                             Menu
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Trang chủ</a>
+                            <a class="nav-link" href="/case-study-M4-FE/user/index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Quản lý ví</a>
@@ -100,7 +100,7 @@
                             <a class="nav-link" href="deposit-form.html"><i class="fa fa-fw fa-file"></i> Quản lý khoản thu</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="/case-study-M4-FE/member/payment/payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý khoản chi</a>
+                            <a class="nav-link" href="/case-study-M4-FE/user/payment/payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý khoản chi</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="withdraw-list.html"><i class="fa fa-fw fa-piggy-bank"></i> Withdraw List</a>
@@ -155,7 +155,7 @@
                             <div id="create-button"> </div>
                             <br>
                             <div>
-                                <input type="text" id="startDate" placeholder="Ngày bắt đầu"> <input type="text" id="endDate" placeholder="Ngày kết thúc"> <span>&nbsp</span><a href="#" onclick="showAllPayment()"><i class="fa fa-search"></i></a>
+                                <input type="date" id="startDate" placeholder="Ngày bắt đầu"> <input type="date" id="endDate" placeholder="Ngày kết thúc"> <span>&nbsp</span><a href="#" onclick="showAllPayment()"><i class="fa fa-search"></i></a>
                             </div>
 
                             <!--                                danh sách khoản chi-->
@@ -224,7 +224,7 @@
                 </div>
                 <div class="form-group">
                     <label for="date">Ngày tháng</label>
-                    <input type="text" class="form-control" id="date" placeholder="Nhập ngày tháng">
+                    <input type="date" class="form-control" id="date" placeholder="Nhập ngày tháng">
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
@@ -266,7 +266,7 @@
                 </div>
                 <div class="form-group">
                     <label for="dateEdit">Ngày tháng</label>
-                    <input type="text" class="form-control" id="dateEdit">
+                    <input class="form-control" id="dateEdit" type="date" name="dateEdit">
                 </div>
                 <div class="form-group">
                     <label for="imageEdit">Image</label>

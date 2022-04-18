@@ -36,6 +36,6 @@ function logout(){
     location.href = '/case-study-M4-FE/index.html';
 }
 
-$('#logout').on( "click", function() {
-    logout();
-});
+// $('#logout').on( "click", function() {
+//     logout();
+// });
