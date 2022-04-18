@@ -24,7 +24,7 @@ function login(){
             }
         },
         error: function () {
-            showErrorMessage(' lỗi!');
+            showErrorMessage(' sai mật khẩu hoặc tên đăng nhập');
         }
     });
 }
