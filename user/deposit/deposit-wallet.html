@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/libs/css/style.css">
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../../assets/vendor/vector-map/jqvmap.css">
+    <link href="../../assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../../assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../../assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/vendor/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/select.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Digital-Wallet-Solution</title>
+
+
+
+</head>
+
+<body>
+<!-- ============================================================== -->
+<!-- main wrapper -->
+<!-- ============================================================== -->
+<div class="dashboard-main-wrapper">
+
+    <!-- ============================================================== -->
+    <!-- navbar -->
+    <!-- ============================================================== -->
+    <div class="dashboard-header">
+        <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+            <a class="navbar-brand" href="../../index.html">Digital Wallet Solution</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto navbar-right-top">
+                    <li class="nav-item">
+                        <div id="custom-search" class="top-search-bar">
+                            <input class="form-control" type="text" placeholder="Search..">
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown nav-user">
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/2.jpg" alt=""
+                                                                           class="user-avatar-md rounded-circle"></a>
+                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                             aria-labelledby="navbarDropdownMenuLink2">
+                            <div class="nav-user-info">
+                                <h5 class="mb-0 text-white nav-user-name">John Doe </h5>
+                                <span class="status"></span><span class="ml-2">Member</span>
+                            </div>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                            <a class="dropdown-item" href="../.."><i class="fas fa-power-off mr-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end navbar -->
+    <!-- ============================================================== -->
+    <!-- left sidebar -->
+    <!-- ============================================================== -->
+    <div class="nav-left-sidebar sidebar-dark">
+        <div class="menu-list">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-divider">
+                            Menu
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../../index.html"><i class="fa fa-fw fa-tachometer-alt"></i>
+                                Dashboard</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Deposit List</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="deposit-form.html"><i class="fa fa-fw fa-file"></i> Deposit
+                                Form</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../withdraw.html"><i class="fa fa-fw fa-money-bill-alt"></i>
+                                Withdraw Money</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../withdraw-list.html"><i class="fa fa-fw fa-piggy-bank"></i>
+                                Withdraw List</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="deposit-wallet.html"><i class="fa fa-fw fa-piggy-bank"></i> Deposit-wallet List</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end left sidebar -->
+
+    <!-- ============================================================== -->
+    <!-- wrapper  -->
+    <!-- ============================================================== -->
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+            <!-- ============================================================== -->
+            <!-- pageheader -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title"><i class="fa fa-fw fa-credit-card"></i> Deposit Transactions </h2>
+                        <div class="page-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Deposit</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end pageheader -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <!-- ============================================================== -->
+                <!-- basic table  -->
+                <!-- ============================================================== -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header">List of Wallet Transactions </h5>
+                        <div class="card-body">
+                            <div id="search">
+
+                            </div>
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered second"
+                                       style="width:100%">
+                                    <thead id="header-deposit-wallet-list-content">
+
+                                    </thead>
+                                    <tbody id="body-deposit-wallet-list-content">
+
+                                    </tbody>
+                                    <tfoot id="footer-deposit-wallet-list-content">
+
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end basic table  -->
+                <!-- ============================================================== -->
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="edit-deposit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit deposit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="amount">Deposit Amount</label>
+                    <input type="text" class="form-control" id="amount" placeholder="Enter amount">
+                </div>
+                <div class="form-group">
+                    <label for="date">Deposit Date</label>
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="note">Deposit Note</label>
+                    <input type="text" class="form-control" id="note" placeholder="Enter note">
+                </div>
+                <div class="form-group">
+                    <label for="wallet">Wallet</label>
+                    <select class="form-control" id="wallet"></select>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between" id="footer-deposit-edit">
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="delete-deposit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete deposit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Confirm to delete</p>
+            </div>
+            <div class="modal-footer justify-content-between" id="footer-deposit-delete">
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- ============================================================== -->
+<!-- end main wrapper -->
+<!-- ============================================================== -->
+<!-- Optional JavaScript -->
+<script src="../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<!-- jQuery -->
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="../../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="../../assets/vendor/multi-select/js/jquery.multi-select.js"></script>
+<script src="../../assets/libs/js/main-js.js"></script>
+<script src="../https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="../https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script src="../../assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+<script src="../../assets/vendor/datatables/js/data-table.js"></script>
+<script src="../https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script src="../https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+<script src="../https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+<script src="../https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
+<script src="../https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+<script src="../https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+
+<script src="deposit-wallet.js"></script>
+</body>
+
+</html>
