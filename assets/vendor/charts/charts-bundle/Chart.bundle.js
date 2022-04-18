@@ -11767,10 +11767,14 @@ module.exports = function(Chart) {
 
 			// Ticks - `this.ticks` is now DEPRECATED!
 <<<<<<< HEAD
+<<<<<<< HEAD
 			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` users
 =======
 			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` user
 >>>>>>> 009a773a136984705f6837f3590ad929dd2b3ef6
+=======
+			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` user
+>>>>>>> feature-deposit
 			// and must not be accessed directly from outside this class. `this.ticks` being
 			// around for long time and not marked as private, we can't change its structure
 			// without unexpected breaking changes. If you need to access the scale ticks,
