@@ -80,8 +80,11 @@ function showEditForm(id){
             'Authorization': 'Bearer ' + currentUser.token
         },
         success: function (payment){
+            let parts=payment.date.split('-');
+            let paymentdate=parts[2]+"-"+parts[1]+"-"+ parts[0]
+            console.log(paymentdate)
             $('#amountEdit').val(payment.amount);
-            $('#dateEdit').val(payment.date);
+            $('#dateEdit').val(paymentdate);
             $('#oldImage').html(`<img src="http://localhost:8080/image/${payment.image}" alt="img">`);
             showAllCategoriesAndWalletsForEdit(user_id);
 
