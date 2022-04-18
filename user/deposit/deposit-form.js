@@ -62,4 +62,6 @@ function createDeposit(){
 
 $(document).ready(function () {
     showCreateDeposit();
+    let username = currentUser.name;
+    $('#user-home').html(username);
 })

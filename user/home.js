@@ -7,6 +7,8 @@ function showAllWallets() {
             'Authorization': 'Bearer ' + currentUser.token
         },
         success: function (wallets) {
+            let username = currentUser.name;
+            $('#user-home').html(username);
             let totalAmount = 0;
             for (let i = 0; i < wallets.length; i++) {
                 totalAmount += wallets[i].currentAmount;
