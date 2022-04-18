@@ -1,7 +1,10 @@
 let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);
 user_id = currentUser.id;
-
+function logout(){
+    localStorage.removeItem('currentUser');
+    location.href = '/case-study-M4-FE/login.html';
+}
 function findAllDepositByUser() {
     let startDate = $('#startDate').val();
     let endDate = $('#endDate').val();
@@ -27,9 +30,14 @@ function findAllDepositByUser() {
                 </tr>`
             }
             $('#deposits-list-content').html(content);
+            let username=currentUser.name;
+            let  role=currentUser.roles[0].authority;
+            $('#user').html(` <h5  class="mb-0 text-white nav-user-name">${username} </h5>
+                                <span class="status"></span><span class="ml-2">${role}</span>`)
+
         }
     })
-    if (startDate !=="" && endDate !==""){
+    if ((startDate !=="" && startDate !== undefined) && (endDate !=="" && endDate !== undefined)){
         $.ajax({
             type: 'GET',
             url: `http://localhost:8080/deposits/user/${user_id}?startDate=${startDate}&endDate=${endDate}`,

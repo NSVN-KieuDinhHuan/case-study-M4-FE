@@ -2,7 +2,10 @@ let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);
 user_id = currentUser.id;
 
-
+function logout(){
+    localStorage.removeItem('currentUser');
+    location.href = '/case-study-M4-FE/login.html';
+}
 function showCreateDeposit() {
     let title = 'Create deposit';
     let footer = `<button type="button" class="btn btn-space btn-primary" onclick="createDeposit()">Create</button>
@@ -53,7 +56,7 @@ function createDeposit(){
             'Authorization': 'Bearer ' + currentUser.token
         },
         success: function () {
-            location.href = "/deposit.html";
+            location.href = "/case-study-M4-FE/user/deposit/deposit.html";
         }
     })
 }

@@ -1,7 +1,10 @@
 let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);
 user_id = currentUser.id;
-
+function logout(){
+    localStorage.removeItem('currentUser');
+    location.href = '/case-study-M4-FE/login.html';
+}
 function findAllWalletByUser() {
 
     let header = `<tr>
