@@ -84,7 +84,9 @@ function showAllDepositForHome(){
         },
         success: function (deposits) {
             let content = '';
+            let totalDeposit = 0;
             for (let i = 0; i < deposits.length; i++) {
+                totalDeposit += deposits[i].amount;
                 content += ` <tr>
                 <td>${i + 1}</td>
                 <td>${deposits[i].amount}</td>
@@ -93,6 +95,32 @@ function showAllDepositForHome(){
                 </tr>`
             }
             $('#deposit-list').html(content);
+            $('#totalDepositAmount').html(totalDeposit);
+        }
+    })
+}
+
+function showAllDepositForHome(){
+    $.ajax({
+        type: 'GET',
+        url: `http://localhost:8080/deposits/user/${user_id}`,
+        headers: {
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        success: function (deposits) {
+            let content = '';
+            let totalDeposit = 0;
+            for (let i = 0; i < deposits.length; i++) {
+                totalDeposit += deposits[i].amount;
+                content += ` <tr>
+                <td>${i + 1}</td>
+                <td>${deposits[i].amount}</td>
+                <td>${deposits[i].date}</td>
+                <td>${deposits[i].note}</td>
+                </tr>`
+            }
+            $('#deposit-list').html(content);
+            $('#totalDepositAmount').html(totalDeposit);
         }
     })
 }
