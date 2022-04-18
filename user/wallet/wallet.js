@@ -214,6 +214,6 @@ $(document).ready(function () {
     if(currentUser!=null){
         getAllWallet();
     } else {
-        location.href='/case-study-M4-FE/auth/login.html'
+        location.href='../../login.html'
     }
 })
