@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/libs/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../assets/vendor/vector-map/jqvmap.css">
+    <link href="../assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/select.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
+    <title>Digital-Wallet-Solution</title>
+</head>
+
+<body>
+<!-- ============================================================== -->
+<!-- main wrapper -->
+<!-- ============================================================== -->
+<div class="dashboard-main-wrapper">
+
+    <!-- ============================================================== -->
+    <!-- navbar -->
+    <!-- ============================================================== -->
+    <div class="dashboard-header">
+        <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Digital Wallet Solution</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto navbar-right-top">
+                    <li class="nav-item">
+                        <div id="custom-search" class="top-search-bar">
+                            <input class="form-control" type="text" placeholder="Search..">
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown nav-user">
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                            <div class="nav-user-info">
+                                <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                <span class="status"></span><span class="ml-2">Admin</span>
+                            </div>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                            <a class="dropdown-item" href="../"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end navbar -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- left sidebar -->
+    <!-- ============================================================== -->
+    <div class="nav-left-sidebar sidebar-dark">
+        <div class="menu-list">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-divider">
+                            Menu
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="currency.html"><i class="fa fa-fw fa-dollar-sign"></i> Currency</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="member.html"><i class="fa fa-fw fa-users"></i> Members</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Payment</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Deposit</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="withdraw.html"><i class="fa fa-fw fa-piggy-bank"></i> Withdrawal</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="logs.html"><i class="fa fa-fw fa-recycle"></i> Logs</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="settings.html"><i class="fa fa-fw fa-cogs"></i> Settings</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-chart-bar"></i>Reports</a>
+                            <div id="submenu-2" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="profit-report.html"><i class="fa fa-fw fa-arrow-alt-circle-left"></i> Profit</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="transaction-report.html"><i class="fa fa-fw fa-arrow-alt-circle-left"></i> Transactions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end left sidebar -->
+    <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title"><i class="fa fa-fw fa-chart-bar"></i> Transaction Reports </h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Reports</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                        <div class="card">
+                                <h5 class="card-header">Transaction Reports</h5>
+                                <div class="card-body">
+                                    <div class="card">
+                                        <div class="card-body">
+                                        <div class="table-responsive ">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Month</th>
+                                                    <th scope="col">Profit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>January</td>
+                                                    <td>1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>February</td>
+                                                    <td>1200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>March</td>
+                                                    <td>1400</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>April</td>
+                                                    <td>2000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>May</td>
+                                                    <td>1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>June</td>
+                                                    <td>1200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>July</td>
+                                                    <td>1400</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>August</td>
+                                                    <td>2000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>September</td>
+                                                    <td>1200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>October</td>
+                                                    <td>1400</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>November</td>
+                                                    <td>1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>December</td>
+                                                    <td>2000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Total</strong></td>
+                                                    <td><strong>16800</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Bar Graph</h5>
+                                <div class="card-body">
+                                    <div class="card">
+                                        <div class="card-body">
+                                        <canvas id="bargraph"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end responsive table -->
+                        <!-- ============================================================== -->
+                    </div>
+
+
+            </div>
+            
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="../assets/vendor/multi-select/js/jquery.multi-select.js"></script>
+    <script src="../assets/libs/js/main-js.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="../assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="../assets/vendor/datatables/js/data-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../assets/libs/js/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Bar Chart
+
+            var barChartData = {
+                labels: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+                datasets: [{
+                    label: 'Evacuees',
+                    backgroundColor: 'rgb(79,129,189)',
+                    borderColor: 'rgba(0, 158, 251, 1)',
+                    borderWidth: 1,
+                    data: [1000,1200,1400,2000,1000,1200,1400,2000,1200,1000,1200,2000]
+                }]
+            };
+
+            var ctx = document.getElementById('bargraph').getContext('2d');
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+ 
+</html>
