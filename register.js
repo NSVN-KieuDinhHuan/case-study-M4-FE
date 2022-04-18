@@ -22,7 +22,6 @@ function register() {
             'Content-Type': 'application/json'
         },
         success: function () {
-
             location.href = '/case-Study-M4-FE/login.html';
 
         },
