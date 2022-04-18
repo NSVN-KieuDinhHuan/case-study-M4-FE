@@ -2805,10 +2805,14 @@ var Class = /** @class */ (function () {
         return SubClass;
     };
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Adds new users variables/methods to the class's prototype.
 =======
     // Adds new user variables/methods to the class's prototype.
 >>>>>>> 009a773a136984705f6837f3590ad929dd2b3ef6
+=======
+    // Adds new user variables/methods to the class's prototype.
+>>>>>>> feature-deposit
     // Can be called with another class, or a plain object hash containing new members.
     Class.mixin = function (members) {
         util_1.copyOwnProps(members, this.prototype);
