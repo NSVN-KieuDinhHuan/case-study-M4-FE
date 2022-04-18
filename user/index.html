@@ -92,7 +92,7 @@
                             <a class="nav-link" href="/case-study-M4-FE/user/payment/payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý khoản chi</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="withdraw-list.html"><i class="fa fa-fw fa-piggy-bank"></i> Withdraw List</a>
+                            <a class="nav-link" href="withdraw-list.html"><i class="fa fa-fw fa-piggy-bank"></i> Quản lý danh mục</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -156,38 +156,14 @@
 <!--                            </div>-->
 <!--                        </div>-->
                     </div>
-<!--                    wallet details-->
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="metric-value d-inline-block">
-                                        <div class="metric-value d-inline-block">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <img src="../assets/images/coins.ph.png" width="100"/>
-                                                </div>
-                                                <div class="col-lg-6" style="margin-left:10px">
-                                                    <p>John Doe</p>
-                                                    <p>Limit: 50,000 - 100,000 USD</p>
-                                                    <p>Charge: 50 USD +3%</p>
-                                                    <p>Charge: 50 USD +3%</p>
-                                                    <p>Charge: 50 USD +3%</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 <!--                    chi tiết thu chi-->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Tổng hợp khoản thu</h3>
-                                    <h4><span></span></h4>
+
+                                    <h4>Total: <span id="totalDepositAmount"></span> VND</h4>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
