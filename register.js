@@ -21,7 +21,7 @@ function register() {
             'Content-Type': 'application/json'
         },
         success: function () {
-            location.href = 'user/deposit.html';
+            location.href = 'user/deposit/deposit.html';
         },
         error: function () {
             showErrorMessage('Xảy ra lỗi!')

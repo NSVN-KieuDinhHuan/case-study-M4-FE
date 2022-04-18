@@ -53,7 +53,7 @@ function createDeposit(){
             'Authorization': 'Bearer ' + currentUser.token
         },
         success: function () {
-            location.href = "/case-study-M4-FE/user/deposit.html";
+            location.href = "/deposit.html";
         }
     })
 }
