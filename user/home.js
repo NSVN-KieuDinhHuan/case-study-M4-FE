@@ -69,7 +69,30 @@ function showAllPaymentForHome() {
     })
 }
 
+function showAllDepositForHome(){
+    $.ajax({
+        type: 'GET',
+        url: `http://localhost:8080/deposits/user/${user_id}`,
+        headers: {
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        success: function (deposits) {
+            let content = '';
+            for (let i = 0; i < deposits.length; i++) {
+                content += ` <tr>
+                <td>${i + 1}</td>
+                <td>${deposits[i].amount}</td>
+                <td>${deposits[i].date}</td>
+                <td>${deposits[i].note}</td>
+                </tr>`
+            }
+            $('#deposit-list').html(content);
+        }
+    })
+}
+
 $(document).ready(function (){
     showAllWallets();
-    showAllPaymentForHome()
+    showAllPaymentForHome();
+    showAllDepositForHome()
 })
