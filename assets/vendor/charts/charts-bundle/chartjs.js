@@ -83,21 +83,6 @@
                         }]
                     },
                     options: {
-                        scales: {
-                            yAxes: [{
-
-                            }]
-                        },
-                             legend: {
-                        display: true,
-                        position: 'bottom',
-
-                        labels: {
-                            fontColor: '#71748d',
-                            fontFamily: 'Circular Std Book',
-                            fontSize: 14,
-                        }
-                    },
 
                     scales: {
                         xAxes: [{
