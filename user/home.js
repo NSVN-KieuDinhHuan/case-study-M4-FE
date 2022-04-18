@@ -1,5 +1,7 @@
 
+
 function showAllWallets() {
+
     $.ajax({
         type: 'GET',
         url: `http://localhost:8080/wallets/user/${user_id}`,
@@ -35,6 +37,10 @@ function showAllWallets() {
                         </div>`
             }
             $('#wallet-list').html(content);
+            let username=currentUser.name;
+            let  role=currentUser.roles[0].authority;
+            $('#user').html(` <h5  class="mb-0 text-white nav-user-name">${username} </h5>
+                                <span class="status"></span><span class="ml-2">${role}</span>`)
         }
     })
 }

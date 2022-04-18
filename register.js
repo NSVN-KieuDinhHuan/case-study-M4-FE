@@ -24,10 +24,8 @@ function register() {
         success: function () {
             location.href = '/case-Study-M4-FE/login.html';
 
-        },
-        error: function () {
-
         }
+
     })
 
 
