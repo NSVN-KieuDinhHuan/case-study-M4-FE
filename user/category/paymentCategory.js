@@ -50,6 +50,48 @@ function createNewPaymentCategory() {
     })
 }
 
+function editPaymentCategory(id) {
+    let name = $('#name').val();
+    let paymentCategory = {
+        name: name
+    }
+    $.ajax({
+        type: 'PUT',
+        url: `http://localhost:8080/paymentCategories/${id}`,
+        data: JSON.stringify(paymentCategory),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        success: function () {
+            showSuccessMessage('Chỉnh sửa thành công!');
+            getAllPaymentCategory();
+        },
+        error: function () {
+            showErrorMessage('Xảy ra lỗi!');
+        }
+    })
+}
+function showEditPaymentCategory(id) {
+    let title = 'Chỉnh sửa thông tin sản phẩm';
+    let footer = `<button class="btn btn-secondary" data-dismiss="modal" type="button">Đóng</button>
+                    <button class="btn btn-primary" onclick="editPaymentCategory(${id})" type="button">Cập nhật</button>`;
+    $('#create-paymentCategory-title').html(title);
+    $('#create-paymentCategory-footer').html(footer);
+    $.ajax({
+        type: 'GET',
+        url: `http://localhost:8080/paymentCategories/${id}`,
+        headers: {
+            'Authorization': 'Bearer ' + currentUser.token
+        },
+        success: function (paymentCategory) {
+            $('#name').val(paymentCategory.name);
+        }
+    })
+}
+
+
 function deletePaymentCategory(id) {
     $.ajax({
         type: 'DELETE',

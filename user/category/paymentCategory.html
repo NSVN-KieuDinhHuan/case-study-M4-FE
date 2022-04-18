@@ -157,7 +157,7 @@
                             <!--                                Button tạo mới khoản chi-->
                             <div id="create-button">
                                 <button class="btn btn-primary col-1" data-target="#create-paymentCategory" data-toggle="modal"
-                                        type="button" onclick="">
+                                        type="button" onclick="getAllPaymentCategory()">
                                     Tạo mới</button>
                             </div>
                             <br>
@@ -220,7 +220,7 @@
                     <input type="text" class="form-control" id="name" placeholder="Nhập tên danh mục">
                 </div>
             </div>
-            <div class="modal-footer justify-content-between" id="create-modal-footer">
+            <div class="modal-footer justify-content-between" id="create-paymentCategory-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 <button type="button" class="btn btn-primary" onclick="createNewPaymentCategory()" data-dismiss="modal">Tạo mới</button>
             </div>
@@ -229,11 +229,11 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<div class="modal fade" id="edit-payment">
+<div class="modal fade" id="edit-paymentCategory">
     <div class="modal-dialog">
-        <div class="modal-content" id="edit-payment-content">
+        <div class="modal-content" id="edit-paymentCategory-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="edit-head">Update khoản chi</h4>
+                <h4 class="modal-title" id="edit-head">Update danh mục</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
