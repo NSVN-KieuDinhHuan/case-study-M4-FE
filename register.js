@@ -22,12 +22,11 @@ function register() {
             'Content-Type': 'application/json'
         },
         success: function () {
-
+            showSuccessMessage("Thanh cong")
             location.href = '/case-Study-M4-FE/login.html';
-
         },
         error: function () {
-
+            showErrorMessage('That bai');
         }
     })
 

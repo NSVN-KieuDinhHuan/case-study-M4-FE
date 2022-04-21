@@ -146,19 +146,19 @@ function showEditWallet(id) {
         success: function (wallet) {
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:8080/users',
+                url: 'http://localhost:8080/wallets',
                 headers: {
                     'Authorization': 'Bearer ' + currentUser.token,
                 },
                 success: function (users) {
-                    let content = `<option>Thay người dùng thành</option>`
+                    let content = `<option></option>`
                     for (let user of users) {
                         content += `<option value="${user.id}">${user.name}</option>`
                     }
-                    $('#selectUser').html(content);
+                    // $('#selectUser').html(content);
                     $('#editName').val(wallet.name);
-                    $('#editCurrentAmount').val(wallet.currentAmount);
-                    $('#editIcon').val(wallet.icon);
+                    $('#editBalance').val(wallet.currentAmount);
+                    $('#editImage').val(wallet.icon);
                 }
             })
         }
@@ -167,8 +167,8 @@ function showEditWallet(id) {
 
 function editWallet(id) {
     let name = $('#editName').val();
-    let currentAmount = $('#editCurrentAmount').val();
-    let icon = $('#editIcon').val();
+    let currentAmount = $('#editBalance').val();
+    let icon = $('#editImage').val();
     let wallet = {
         name: name,
         currentAmount: currentAmount,
@@ -193,27 +193,11 @@ function editWallet(id) {
     })
 }
 
-// function changeUser() {
-//     $.ajax({
-//         type: 'GET',
-//         url: 'http://localhost:8080/users',
-//         headers: {
-//             'Authorization': 'Bearer ' + currentUser.token,
-//         },
-//         success: function (users) {
-//             let content = `<option>Chọn lại người dùng</option>`
-//             for (let user of users) {
-//                 content += `<option value="${user.id}">${user.name}</option>`
-//             }
-//             $('#editUser').html(content);
-//         }
-//     })
-// }
 
 $(document).ready(function () {
     if(currentUser!=null){
         getAllWallet();
     } else {
-        location.href='/case-study-M4-FE/auth/login.html'
+        location.href='../../login.html'
     }
 })

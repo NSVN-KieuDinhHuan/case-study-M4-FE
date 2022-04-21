@@ -26,8 +26,8 @@
     <!-- Toastr -->
     <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
     <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
-    <title>Quản lý khoản chi</title>
-    <script src="payment.js"></script>
+    <title>Digital-Wallet-Solution</title>
+    <script src="paymentCategory.js"></script>
     <script src="show.js"></script>
     <!--    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">-->
 
@@ -45,27 +45,27 @@
     <!-- ============================================================== -->
     <div class="dashboard-header">
         <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-            <a class="navbar-brand" href="index.html">VÍ ĐIỆN TỬ THÔNG MINH</a>
+            <a class="navbar-brand" href="index.html">Digital Wallet Solution</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto navbar-right-top">
-<!--                    <li class="nav-item">-->
-<!--                        <div id="custom-search" class="top-search-bar">-->
-<!--                            <input class="form-control" type="text" placeholder="Search..">-->
-<!--                        </div>-->
-<!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <div id="custom-search" class="top-search-bar">-->
+                    <!--                            <input class="form-control" type="text" placeholder="Search..">-->
+                    <!--                        </div>-->
+                    <!--                    </li>-->
                     <li class="nav-item dropdown nav-user">
-                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                         <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                             <div class="nav-user-info">
-                                <h5 class="mb-0 text-white nav-user-name" id="user">John Doe </h5>
-                                <span class="status"></span><span class="ml-2">User</span>
+                                <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                <span class="status"></span><span class="ml-2">Admin</span>
                             </div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Tài khoản</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Cài đặt</a>
-                            <a class="dropdown-item" href="#" onclick="logout()"><i class="fas fa-power-off mr-2"></i>Đăng xuất</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                            <a class="dropdown-item" href="#" onclick="logout()"><i class="fas fa-power-off mr-2"></i>Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -94,20 +94,22 @@
                             <a class="nav-link" href="/case-study-M4-FE/user/index.html"><i class="fa fa-fw fa-tachometer-alt"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="/case-study-M4-FE/user/wallet/wallet.html"><i class="fa fa-fw fa-credit-card"></i> Quản lý ví</a>
+                            <a class="nav-link" href="deposit.html"><i class="fa fa-fw fa-credit-card"></i> Quản lý ví</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="/case-study-M4-FE/user/deposit/deposit.html"><i class="fa fa-fw fa-file"></i> Quản lý khoản thu</a>
+                            <a class="nav-link" href="deposit-form.html"><i class="fa fa-fw fa-file"></i> Quản lý khoản thu</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="/case-study-M4-FE/user/payment/payment.html"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý khoản chi</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="/case-study-M4-FE/user/category/paymentCategory.html"><i class="fa fa-fw fa-piggy-bank"></i> Quản lý danh mục chi tiêu</a>
+                            <a class="nav-link" href="/case-study-M4-FE/user/category/paymentCategory.html"><i class="fa fa-fw fa-category"></i> Quản lý danh mục</a>
                         </li>
-
                         <li class="nav-item ">
-                            <a class="nav-link" href="/case-study-M4-FE/user/deposit/deposit-form.html"><i class="fa fa-fw fa-piggy-bank"></i> Thêm mới khoản thu</a>
+                            <a class="nav-link" href="withdraw-list.html"><i class="fa fa-fw fa-piggy-bank"></i> Withdraw List</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                     </ul>
                 </div>
@@ -129,12 +131,12 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">
-                        <h2 class="pageheader-title"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý chi tiêu </h2>
+                        <h2 class="pageheader-title"><i class="fa fa-fw fa-money-bill-alt"></i> Quản lý danh mục </h2>
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Trang chủ</a></li>
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Chi tiêu</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Danh mục</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -150,13 +152,17 @@
                 <!-- ============================================================== -->
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Danh sách khoản chi </h5>
+                        <h5 class="card-header">Danh sách danh mục </h5>
                         <div class="card-body">
                             <!--                                Button tạo mới khoản chi-->
-                            <div id="create-button"> </div>
+                            <div id="create-button">
+                                <button class="btn btn-primary col-1" data-target="#create-paymentCategory" data-toggle="modal"
+                                        type="button" onclick="getAllPaymentCategory()">
+                                    Tạo mới</button>
+                            </div>
                             <br>
                             <div>
-                                <input type="date" id="startDate" placeholder="Ngày bắt đầu"> <input type="date" id="endDate" placeholder="Ngày kết thúc"> <span>&nbsp</span><a href="#" onclick="showAllPayment()"><i class="fa fa-search"></i></a>
+
                             </div>
 
                             <!--                                danh sách khoản chi-->
@@ -166,25 +172,15 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Số tiền</th>
-                                        <th>Ngày chi</th>
-                                        <th>Hoá đơn</th>
-                                        <th>Nhóm chi tiêu</th>
-                                        <th>Ví</th>
-                                        <th>Thao tác</th>
+                                        <th>Tên danh mục</th>
                                     </tr>
                                     </thead>
-                                    <tbody id="payment-list">
+                                    <tbody id="paymentCategory-list">
                                     </tbody>
                                     <tfoot>
                                     <tr>
                                         <th>#</th>
-                                        <th>Số tiền</th>
-                                        <th>Ngày chi</th>
-                                        <th>Hoá đơn</th>
-                                        <th>Nhóm chi tiêu</th>
-                                        <th>Ví</th>
-                                        <th>Thao tác</th>
+                                        <th>Tên danh mục</th>
                                     </tr>
                                     </tfoot>
                                 </table>
@@ -192,9 +188,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- end basic table  -->
-                <!-- ============================================================== -->
             </div>
 
 
@@ -209,80 +202,43 @@
 <!--    <script src="payment.js"></script>-->
 
 <!--Modal-->
-<div class="modal fade" id="create-payment">
+<div class="modal fade" id="create-paymentCategory">
     <div class="modal-dialog">
-        <div class="modal-content" id="create-payment-content">
+        <div class="modal-content" id="create-paymentCategory-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="create-head">Thêm khoản chi</h4>
+                <h4 class="modal-title" id="create-head">Thêm danh mục</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="create-modal_body">
                 <div class="form-group">
-                    <label for="amount">Số tiền</label>
-                    <input type="number" class="form-control" id="amount" placeholder="Nhập số tiền">
-                </div>
-                <div class="form-group">
-                    <label for="date">Ngày tháng</label>
-                    <input type="date" class="form-control" id="date" placeholder="Nhập ngày tháng">
-                </div>
-                <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" class="form-control" id="image">
-                </div>
-                <div class="form-group">
-                    <label for="wallet">Ví</label>
-                    <select id="wallet">
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="category">Nhóm</label>
-                    <select id="category">
-                    </select>
+                    <label for="name">Tên danh mục</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nhập tên danh mục">
                 </div>
             </div>
-            <div class="modal-footer justify-content-between" id="create-modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="createPayment()" data-dismiss="modal">Create</button>
+            <div class="modal-footer justify-content-between" id="create-paymentCategory-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="createNewPaymentCategory()" data-dismiss="modal">Tạo mới</button>
             </div>
         </div>
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
 </div>
-<div class="modal fade" id="edit-payment">
+<div class="modal fade" id="edit-paymentCategory">
     <div class="modal-dialog">
-        <div class="modal-content" id="edit-payment-content">
+        <div class="modal-content" id="edit-paymentCategory-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="edit-head">Update khoản chi</h4>
+                <h4 class="modal-title" id="edit-head">Update danh mục</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="edit-modal_body">
                 <div class="form-group">
-                    <label for="amountEdit">Số tiền</label>
+                    <label for="amountEdit">Cập nhập tên</label>
                     <input type="number" class="form-control" id="amountEdit">
-                </div>
-                <div class="form-group">
-                    <label for="dateEdit">Ngày tháng</label>
-                    <input class="form-control" id="dateEdit" type="date" name="dateEdit">
-                </div>
-                <div class="form-group">
-                    <label for="imageEdit">Image</label>
-                    <p id="oldImage"></p>
-                    <input type="file" class="form-control" id="imageEdit">
-                </div>
-                <div class="form-group">
-                    <label for="walletEdit">Ví</label>
-                    <select id="walletEdit">
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="categoryEdit">Nhóm</label>
-                    <select id="categoryEdit">
-                    </select>
                 </div>
             </div>
             <div class="modal-footer justify-content-between" id="edit-modal-footer">
@@ -292,11 +248,11 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<div class="modal fade" id="delete-payment">
+<div class="modal fade" id="delete-paymentCategory">
     <div class="modal-dialog">
-        <div class="modal-content" id="delete-payment-content">
+        <div class="modal-content" id="delete-paymentCategory-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="delete-head">Xoá khoản chi</h4>
+                <h4 class="modal-title" id="delete-head">Xoá danh mục</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -305,8 +261,6 @@
                 <h2>Bạn có chắc chắn muốn xoá không?</h2>
             </div>
             <div class="modal-footer justify-content-between" id="delete-modal-footer">
-                <!--                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                <!--                <button type="button" class="btn btn-primary" onclick="deletePayment(id)" data-dismiss="modal">Delete</button>-->
             </div>
         </div>
         <!-- /.modal-content -->
@@ -316,7 +270,7 @@
 <script src="init.js"></script>
 <script src="show.js"></script>
 <script src="../../login.js"></script>
-<script src="payment.js"></script>
+<script src="paymentCategory.js"></script>
 <script src="../../notification.js"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
