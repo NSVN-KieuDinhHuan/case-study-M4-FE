@@ -17,9 +17,9 @@ function getAllPaymentCategory() {
         <td><button class="btn btn-primary"><i data-target="" data-toggle="modal"
                                         type="button" onclick="showAllPayment()"></i>Xem</button></td>
         <td><button class="btn btn-primary"><i class="fa fa-edit" data-target="#create-paymentCategory" data-toggle="modal"
-                                        type="button" onclick="showEditPaymentCategory(${paymentCategories[i].id})"></i></button>edit</td>
+                                        type="button" onclick="showEditPaymentCategory(${paymentCategories[i].id})"></i></button></td>
         <td><button class="btn btn-danger" data-target="#delete-paymentCategory" data-toggle="modal"
-                                        type="button" onclick="showDeletePaymentCategory(${paymentCategories[i].id})"><i class="fa fa-trash"></i></button>delete</td>
+                                        type="button" onclick="showDeletePaymentCategory(${paymentCategories[i].id})"><i class="fa fa-trash"></i></button></td>
     </tr>`
             }
             $('#paymentCategory-list').html(content);
@@ -38,7 +38,8 @@ function createNewPaymentCategory() {
         data: JSON.stringify(paymentCategory),
         headers: {
             'Accept':'application/json',
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': 'Bearer ' + currentUser.token
         },
         success: function () {
             getAllPaymentCategory();
